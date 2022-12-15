@@ -51,7 +51,7 @@
 
 /* form */
 .cform-control {
-  height: 50px;
+  height: 70px;
 }
 
 .cform-control .cform-label {
@@ -63,31 +63,12 @@
   transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1),color 150ms cubic-bezier(0.4, 0, 0.2, 1), top 500ms;
 }
 
-.cform-control input:focus + label,
-.cform-control input:not(:placeholder-shown) + label {
-  transform: translateY(-145%) scale(0.8);
+.cform-control input {
+  border: 1px solid black; 
+  height: 40px;
+  text-indent: 5px;
+  width: 100%;
 }
-
-.cform-control input:focus::placeholder {
-  color: var(--dark-shade);
-}
-
-.cform-control input::placeholder {
-  color: transparent;
-}
-
-.pattern-control input[type=text]:invalid:not(:placeholder-shown) {
-  border-bottom: 2px solid var(--text-danger);
-}
-
-.pattern-control .err-msg {
-  display: none;
-}
-
-.pattern-control input[type=text]:invalid:not(:placeholder-shown) ~ .err-msg {
-  display: block !important;
-}
-
 .err-msg {
   font-size: 9pt;
   display: block;

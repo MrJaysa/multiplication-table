@@ -5,6 +5,7 @@
         data: () => ({
           mv: [],
           value: null,
+          visible: false
         }),
 
         watch: {
@@ -15,11 +16,15 @@
             computeValues(event) {
               event.preventDefault();
               this.mv = [...Array.from({length: 12}, (_, i) => this.value * (i+1))];
+              this.visible = true
             },
 
             check () {
               if (this.mv) {
                 this.mv = [];
+              }
+              if(this.visible) {
+                this.visible = false
               }
             }
         },
@@ -48,11 +53,12 @@
               Please enter a number e.g 1,3,4
             </div>
           </div>
-          <div>
+          <div class="mt-1">
             <button class="br-5">Generate time table</button>
           </div>
         </form>
-        <div v-if="mv.length > 0 && value">
+        
+        <div v-if="visible">
           <div class="flex justify-space-between">
             <div>
               <h3>Result via function computation</h3>
@@ -65,7 +71,7 @@
 
             <div>
               <h3>Result via vue loop</h3>
-              <ul v-if="value && mv.length > 0">
+              <ul>
                 <li v-for="i in 12">
                   {{i}} <span class="text-primary">x</span> {{value}} = {{value * i}}
                 </li>
@@ -84,6 +90,9 @@
   height: 470px
 }
 
+.mt-1 {
+  margin-top: 10px;
+}
 .flex {
   gap: 30px;
 }
@@ -105,10 +114,11 @@ h1, h3 {
 
 button {
   border: none;
-  height: 30px;
+  height: 35px;
   width: 200px;
   color: white;
   background-color: var(--primary-color);
+  cursor: pointer;
 }
 
 /* Chrome, Safari, Edge, Opera */

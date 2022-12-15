@@ -27,42 +27,51 @@
 </script>
 
 <template>
-  <div class="container flex justify-content-center align-items-center">
-    <div class="card br-10">
-      <h1>Multiplication times table</h1>
-      
-      <form @submit="computeValues">
-        <div class="cform-control pattern-control">
-          <label for="value" class="cform-label">Enter a number</label>
+  <div class="container flex place-center">
+    <div class="content">
+      <div class="card br-10">
 
-          <input
+        <h1>Multiplication times table</h1>
+        
+        <form @submit="computeValues">
+          <div class="cform-control pattern-control">
+            <label for="value" class="cform-label">Enter a number</label>
+
+            <input
             type="number"
             id="value"
             v-model="value"
             placeholder="Enter a number"
             required
-          />
-          <div v-if="(typeof(value)) != 'number' && value != ''" class="err-msg">
-            Please enter a number e.g 1,3,4
+            />
+            <div v-if="(typeof(value)) != 'number' && value != ''" class="err-msg">
+              Please enter a number e.g 1,3,4
+            </div>
           </div>
-        </div>
-        <div>
-          <button class="br-5">Generate time table</button>
-        </div>
-      </form>
-      <div v-if="mv">
-        <div class="flex justify-space-between">
-          <ul>
-            <li v-for="(n, i) in mv">
-              {{value}} * {{i+1}} = {{n}}
-            </li>
-          </ul>
+          <div>
+            <button class="br-5">Generate time table</button>
+          </div>
+        </form>
+        <div v-if="mv.length > 0 && value">
+          <div class="flex justify-space-between">
+            <div>
+              <h3>Result via function computation</h3>
+              <ul>
+                <li v-for="(n, i) in mv">
+                  {{i+1}} <span class="text-primary">x</span> {{value}}  = {{n}}
+                </li>
+              </ul>
+            </div>
 
-          <ul v-if="value && mv.length > 0">
-            <li v-for="i in 12">
-              {{value}} * {{i+1}} = {{value * i}}
-            </li>
-          </ul>
+            <div>
+              <h3>Result via vue loop</h3>
+              <ul v-if="value && mv.length > 0">
+                <li v-for="i in 12">
+                  {{i}} <span class="text-primary">x</span> {{value}} = {{value * i}}
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -70,10 +79,16 @@
 </template>
 
 <style scoped>
-.card {
+.content {
   width: 50%;
+  height: 470px
+}
+
+.flex {
+  gap: 30px;
+}
+.card {
   padding: 20px !important;
-  height: 400px
 }
 
 form {
@@ -83,6 +98,8 @@ form {
 h1 {
   text-decoration-line: underline;
   text-underline-offset: 5px;
+}
+h1, h3 {
   margin-bottom: 15px;
 }
 

@@ -1,0 +1,68 @@
+:root {
+  --dark-text-color: #333;
+  --text-color: #fff;
+  --white: #fff;
+  --text-secondary: rgb(99, 99, 99);
+  --primary-color: #13314b;
+  --secondary-color: #0f426f;
+  --info-color: #002488;
+  --dark-primary-color: #061e33;
+  --dark-shade: #7a7a7a;
+  --light-color: #f3f3f37a;
+  --lighter-color: #ffffffd7;
+  --transparent-white: #ffffffbe;
+  --hovered: rgba(0, 0, 0, 0.171);
+  --light-primary-color: #0d4679;
+  --lighter-primary-color: #f3f3f3;
+  --dark-shadow: rgba(0, 0, 0, 0.2);
+  --dark-shadow-0-1: rgba(0, 0, 0, 0.1);
+  --text-danger: #ae0101b8;
+  --danger-color: #fd3807b8;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+  --warning-color: #fba51f;
+  --transparent: transparent;
+
+  /* breadcrumbs */
+  --breadcrumbs-2: #175c99;
+  --breadcrumbs-3: #216cad;
+  --breadcrumbs-4: #3682c4;
+  --breadcrumbs-5: #4c96d6;
+  --breadcrumbs-6: #55a3e7;
+  
+  /* modal widths */
+  --modal-width: 60%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: 'Lato', 'san-seriff';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+
+body {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+

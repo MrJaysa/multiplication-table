@@ -15,14 +15,15 @@
         methods: {
             computeValues(event) {
               event.preventDefault();
+              this.mv = [];
               for (let i = 1; i<=this.value; i++) {
-                let arr = []
+                let arr = [];
                 for (let k = 1; k<=this.value; k++) {
-                  arr.push(k*i)
+                  arr.push(k*i);
                 }
-                this.mv.push(arr)
+                this.mv.push(arr);
               }
-              this.visible = true
+              this.visible = true;
             },
 
             check () {
@@ -30,7 +31,7 @@
                 this.mv = [];
               }
               if(this.visible) {
-                this.visible = false
+                this.visible = false;
               }
             }
         },

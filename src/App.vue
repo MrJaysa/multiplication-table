@@ -42,7 +42,7 @@
     <div class="content">
       <div class="card br-10">
 
-        <h1>Multiplication times table</h1>
+        <h1 class="text-primary">Multiplication times table</h1>
         
         <form @submit="computeValues">
           <div class="cform-control pattern-control">
@@ -64,7 +64,8 @@
           </div>
         </form>
         
-        <div v-if="visible" class="br-10 bg-primary calc flex justify-content-center">
+        <h3 v-if="visible" class="text-primary">{{value}}x; Two dimensional multiplication table</h3>
+        <div v-if="visible" class="br-10 bg-primary calc flex justify-content-center flex-column">
           <div v-for="val in mv">
             <div v-for="item in val">
               {{ item }}

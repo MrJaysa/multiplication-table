@@ -82,6 +82,10 @@
   height: 470px
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
 .mt-1 {
   margin-top: 10px;
 }
@@ -97,7 +101,7 @@
   overflow: auto;
   max-height: 300px;
   color: white;
-  padding: 20px
+  padding: 20px;
 }
 
 form {

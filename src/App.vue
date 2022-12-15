@@ -91,7 +91,6 @@
 }
 .flex {
   gap: 15px;
-  text-align: center;
 }
 .card {
   padding: 20px !important;
@@ -102,6 +101,7 @@
   max-height: 300px;
   color: white;
   padding: 20px;
+  text-align: center;
 }
 
 form {
@@ -130,6 +130,12 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+input {
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--primary-color);
 }
 
 .container {

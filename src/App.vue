@@ -15,7 +15,13 @@
         methods: {
             computeValues(event) {
               event.preventDefault();
-              this.mv = [...Array.from({length: 12}, (_, i) => this.value * (i+1))];
+              for (let i = 1; i<=this.value; i++) {
+                let arr = []
+                for (let k = 1; k<=this.value; k++) {
+                  arr.push(k*i)
+                }
+                this.mv.push(arr)
+              }
               this.visible = true
             },
 
@@ -43,11 +49,11 @@
             <label for="value" class="cform-label">Enter a number</label>
 
             <input
-            type="number"
-            id="value"
-            v-model="value"
-            placeholder="Enter a number"
-            required
+              type="number"
+              id="value"
+              v-model="value"
+              placeholder="Enter a number"
+              required
             />
             <div v-if="(typeof(value)) != 'number' && value != null" class="err-msg">
               Please enter a number e.g 1,3,4
@@ -58,23 +64,11 @@
           </div>
         </form>
         
-        <div v-if="visible" class="flex justify-space-between">
-          <div>
-            <h3>Result via function computation</h3>
-            <ul>
-              <li v-for="(n, i) in mv">
-                {{i+1}} <span class="text-primary">x</span> {{value}}  = {{n}}
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3>Result via vue loop</h3>
-            <ul>
-              <li v-for="i in 12">
-                {{i}} <span class="text-primary">x</span> {{value}} = {{value * i}}
-              </li>
-            </ul>
+        <div v-if="visible" class="br-10 bg-primary calc flex justify-space-between">
+          <div v-for="val in mv">
+            <div v-for="item in val">
+              {{ item }}
+            </div>
           </div>
         </div>
       </div>
@@ -96,6 +90,13 @@
 }
 .card {
   padding: 20px !important;
+}
+
+.calc {
+  overflow: auto;
+  max-height: 300px;
+  color: white;
+  padding: 20px
 }
 
 form {
@@ -129,6 +130,19 @@ input::-webkit-inner-spin-button {
 .container {
   min-height: 100vh;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  .content {
+    width: 95%;
+    height: 470px
+  }
+
+  .place-center {
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+
+  .calc {
+    max-height: 500px;
+  }
 }
 </style>

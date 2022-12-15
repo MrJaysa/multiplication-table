@@ -118,12 +118,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-  width: 100%;
-}
-
 .container {
   min-height: 100vh;
 }

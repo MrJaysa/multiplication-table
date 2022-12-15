@@ -64,7 +64,7 @@
           </div>
         </form>
         
-        <div v-if="visible" class="br-10 bg-primary calc flex">
+        <div v-if="visible" class="br-10 bg-primary calc flex justify-content-center">
           <div v-for="val in mv">
             <div v-for="item in val">
               {{ item }}
@@ -86,7 +86,8 @@
   margin-top: 10px;
 }
 .flex {
-  gap: 30px;
+  gap: 15px;
+  text-align: center;
 }
 .card {
   padding: 20px !important;
@@ -139,10 +140,6 @@ input::-webkit-inner-spin-button {
   .place-center {
     align-items: flex-start;
     margin-top: 30px;
-  }
-
-  .calc {
-    max-height: 500px;
   }
 }
 </style>

@@ -49,7 +49,7 @@
             placeholder="Enter a number"
             required
             />
-            <div v-if="(typeof(value)) != 'number' && value != ''" class="err-msg">
+            <div v-if="(typeof(value)) != 'number' && value != null" class="err-msg">
               Please enter a number e.g 1,3,4
             </div>
           </div>
@@ -58,25 +58,23 @@
           </div>
         </form>
         
-        <div v-if="visible">
-          <div class="flex justify-space-between">
-            <div>
-              <h3>Result via function computation</h3>
-              <ul>
-                <li v-for="(n, i) in mv">
-                  {{i+1}} <span class="text-primary">x</span> {{value}}  = {{n}}
-                </li>
-              </ul>
-            </div>
+        <div v-if="visible" class="flex justify-space-between">
+          <div>
+            <h3>Result via function computation</h3>
+            <ul>
+              <li v-for="(n, i) in mv">
+                {{i+1}} <span class="text-primary">x</span> {{value}}  = {{n}}
+              </li>
+            </ul>
+          </div>
 
-            <div>
-              <h3>Result via vue loop</h3>
-              <ul>
-                <li v-for="i in 12">
-                  {{i}} <span class="text-primary">x</span> {{value}} = {{value * i}}
-                </li>
-              </ul>
-            </div>
+          <div>
+            <h3>Result via vue loop</h3>
+            <ul>
+              <li v-for="i in 12">
+                {{i}} <span class="text-primary">x</span> {{value}} = {{value * i}}
+              </li>
+            </ul>
           </div>
         </div>
       </div>

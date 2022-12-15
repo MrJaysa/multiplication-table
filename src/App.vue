@@ -64,7 +64,7 @@
           </div>
         </form>
         
-        <div v-if="visible" class="br-10 bg-primary calc flex justify-space-between">
+        <div v-if="visible" class="br-10 bg-primary calc flex">
           <div v-for="val in mv">
             <div v-for="item in val">
               {{ item }}
